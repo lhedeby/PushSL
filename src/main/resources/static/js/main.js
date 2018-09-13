@@ -89,7 +89,7 @@ function getOrigins() {
     resetOriginDiv();
     if (UI.input.origin.val()) {
         let textData = UI.input.origin.val();
-        fetch('http://localhost:8080/siteinfo', {
+        fetch('/siteinfo', {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json'
@@ -135,7 +135,7 @@ function getDests() {
     resetDestDiv()
     if (UI.input.destination.val()) {
         let textData = UI.input.destination.val();
-        fetch('http://localhost:8080/siteinfo', {
+        fetch('http:/siteinfo', {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json'
@@ -236,7 +236,7 @@ function searchTrip() {
 
     UI.container.progressBar.attr('aria-valuenow', '98%').css('width', '98%');
 
-    fetch('http://localhost:8080/search', {
+    fetch('/search', {
         method: 'post',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
@@ -353,7 +353,7 @@ function closeEmailForm() {
 
 function startCounter() {
     intern.rtCheckInterval = setInterval(() => {
-        fetch('http://localhost:8080/checktime', {
+        fetch('/checktime', {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json'
@@ -481,7 +481,7 @@ function cancelReminder() {
 function setMailReminder() {
     intern.chosenTrip.email = UI.input.email.val();
     intern.chosenTrip.reminderMinutes = UI.input.minutes.val();
-    fetch('http://localhost:8080/reminder', {
+    fetch('/reminder', {
         method: 'post',
         headers: {
             'Content-Type': 'application/json'
