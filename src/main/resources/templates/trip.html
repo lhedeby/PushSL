@@ -17,7 +17,7 @@
         <span>Kista</span> <i class="fas fa-long-arrow-alt-right"></i> <span>Slussen</span>
     </p>
     <div th:each="j : ${array}">
-        <div th:replace="/tripdetail :: detail"></div>
+        <div th:replace="tripdetail :: detail"></div>
     </div>
 </div>
 
